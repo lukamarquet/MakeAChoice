@@ -57,10 +57,6 @@ button {
 button:disabled {
     cursor: not-allowed;
 }
-input[type="color"] {
-    height: 21.33px;
-    cursor: pointer;
-}
 .addchoice {
     background-color: rgb(253, 167, 38);
     color: white;
@@ -82,6 +78,14 @@ input[type="color"] {
     color: white;
     border-radius: 10px;
     padding: 10px;
+}
+input[type="color"] {
+    height: 23.33px;
+    cursor: pointer;
+    margin: 0;
+}
+.choice > input[type="text"], .choice > button {
+    font-size: 15px;
 }
 .resultcontainer {
     color: white;
@@ -244,6 +248,7 @@ a {
         "btn rei";
     grid-template-columns: auto auto max-content;
     font-family: sans-serif;
+    align-items: center;
 }
 .content > p {
     margin: 0;
@@ -345,7 +350,7 @@ input:checked + .slider::before {
 }
 #questionText {
     margin: 20px 15px 20px 15px;
-    font-size: 29px;
+    font-size: 23px;
     max-width: 90%;
     box-sizing: border-box;
 }
