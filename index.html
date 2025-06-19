@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title translate="no">Make A Choice</title>
+        <link rel="stylesheet" href="styles.css">  
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu">
+                <button id="param" title="Parameters" onclick="openparam()">═</button>
+                <button id="reload" title="Reload" onclick="resetChoices()">↻</button>
+            </div>
+            <h1 id="title" translate="no">Make A Choice</h1>
+            <input type="text" id="questionText" placeholder="Add question">
+            <button class="addchoice" onclick="addchoice(1)">+ Add choice</button>
+            <div class="choices">
+                <div class="warning">
+                    <p>There are no choices. Please add at least two options.</p>
+                    <input type="number" value="2" id="nbaddwarning" min="1" max="1000" onchange="console.log(value)">
+                    <button onclick="addchoice(parseInt(document.getElementById('nbaddwarning').value))" id="warningadd">Add</button>
+                </div>
+            </div>
+            <div class="buttons">
+                <input type="submit" class="submit" onclick="random()" value="At random">
+            </div>
+            <div class="error" id="error" title="Error message">
+                <p>⚠️ Error message: <span id="errormessage"></span></p>
+                <button class="close" onclick="closeError()" title="close">✕</button>
+            </div>
+            <div class="success" id="success" title="Success message">
+                <p>✔️ Success message: <span id="successmessage"></span></p>
+                <button class="close" onclick="closeSuccess()" title="close">✕</button>
+            </div>
+            <div class="resultcontainer">
+                <p id="resultText" translate="no"></p>
+                <span id="lastTime"></span>
+            </div>
+            <div class="backparameters" onclick="closeparam()">
+            </div>
+            <div class="parameters">
+                <h2 id="titleparam">Parameters</h2>
+                <button class="close" id="closeparam" onclick="closeparam()" title="close">✕</button>
+                <div class="content un">
+                    <p>Allow occurrences</p>
+                </div>
+                <div class="content deux">
+                    <p>Delete after sorted</p>
+                </div>
+                <div class="content trois">
+                    <p>Number of output</p>
+                </div>
+                <div class="param1">
+                    <label for="repparam">No</label>
+                    <label class="switch">
+                        <input type="checkbox" id="repparam" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <label for="repparam">Yes</label>
+                </div>
+                <div class="param2">
+                    <label for="deleteAfter">No</label>
+                    <label class="switch">
+                        <input type="checkbox" id="deleteAfter">
+                        <span class="slider"></span>
+                    </label>
+                    <label for="deleteAfter">Yes</label>
+                </div>
+                <div class="param3">
+                    <input type="number" id="sortValue" value="1" min="1">
+                </div>
+                <button id="savepara" onclick="saveParam()" disabled>Save</button>
+                <button id="reipara" onclick="resetParam()" disabled>Reset to default settings</button>
+            </div>
+            <div class="footer">
+                <p>Made by <a href="https://github.com/lukamarquet/" target="_blank">Luka MARQUET</a> in June 2025.</p>
+            </div>
+            <button id="backToTop" onclick="scrollToTop()"><g id="underline">Return to top</g> <bigger id="bigger">⬆</bigger></button>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

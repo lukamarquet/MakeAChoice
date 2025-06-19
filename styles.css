@@ -1,0 +1,401 @@
+#title {
+    font-family: sans-serif;
+    text-decoration: rgb(0, 102, 204) wavy underline;
+    cursor: default;
+}
+p {
+    cursor: default;
+}
+#param {
+    color: #565656;
+    font-size: 35px;
+    height: 45px;
+    width: 45px;
+    background: transparent;
+    border: none;
+    position: fixed;
+    top: 27.5px;
+    left: 20px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+#param:hover {
+    background-color: #56565631;
+}
+#reload {
+    color: #565656;
+    font-size: 35px;
+    height: 45px;
+    width: 45px;
+    background: transparent;
+    border: none;
+    position: fixed;
+    top: 27.5px;
+    right: 20px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+#reload:hover {
+    background-color: #56565631;
+}
+.footer {
+    margin: 0 0 40px 0;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    cursor: pointer;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+input[type="color"] {
+    height: 21.33px;
+    cursor: pointer;
+}
+.addchoice {
+    background-color: rgb(253, 167, 38);
+    color: white;
+    height: 57.5px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;  
+    border: none;
+}
+.addchoice:hover {
+    background-color: rgb(251, 181, 76);
+}
+.choices {
+    margin: 20px 0 20px 0;
+}
+.choice {
+    margin: 10px 0 10px 0;
+    background-color: rgb(132, 132, 132);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.resultcontainer {
+    color: white;
+    background-color: rgb(11, 173, 11);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    display: none;
+    padding: 0 20px 0 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.delete {
+    margin: 0 4px 0 4px;
+}
+.warning {
+    display: none;
+}
+.warning > button, .warning > input{
+    margin: 16px 0 16px 5px;
+    height: fit-content;
+}
+.error {
+    z-index: 10000;
+    font-family: sans-serif;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+
+    display: flex;
+    position: fixed;
+    top: 10px;
+    background-color: rgb(255, 41, 41);
+    color: white;
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
+    cursor:default;
+}
+.error.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+.error > button {
+    margin: auto 2px auto 2px;
+    width: 20px;
+    height: 20px;
+    padding: 0 0 0 0.75px;
+    border-radius: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.error > button:hover {
+    background-color: rgba(255, 255, 255, 0.224);
+}
+.success {
+    z-index: 10000;
+    font-family: sans-serif;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+
+    display: flex;
+    position: fixed;
+    top: 10px;
+    background-color: rgb(0, 102, 204);
+    color: white;
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
+    cursor:default;
+}
+.success.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+.success > button {
+    margin: auto 2px auto 2px;
+    width: 20px;
+    height: 20px;
+    padding: 0 0 0 0.75px;
+    border-radius: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.success > button:hover {
+    background-color: rgba(255, 255, 255, 0.224);
+}
+a {
+    color: rgb(0, 102, 204);
+    text-decoration: none;
+}
+#backToTop {
+    position: fixed;
+    bottom: 20px;   
+    right: 30px;
+    background-color: #ffffff00;
+    color: rgb(209, 209, 209);
+    background-color: rgb(54, 54, 54);
+    border: solid 2px #3e3e3e;
+    border-radius: 100px;
+    height: 45px;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s ease;
+    z-index: 998;
+}
+#bigger{
+    font-size: larger;
+}
+#backToTop:hover {
+    background-color: rgb(45, 45, 45);
+}
+@keyframes vibrate {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-2px, 2px); }
+  40%  { transform: translate(-2px, -2px); }
+  60%  { transform: translate(2px, 2px); }
+  80%  { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+.vibrate {
+  animation: vibrate 0.2s linear 1; /* 3 répétitions */
+}
+.backparameters{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    background-color: #87878753;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+.parameters{
+    z-index: 1000;
+    position: fixed;
+    display: none;
+    top: 40px;
+    padding: 0 20px 20px 20px;
+    background-color: white;
+    cursor: default;
+    border-radius: 10px;
+    grid-template-areas:
+        "title close"
+        "content1 param1"
+        "content2 param2"
+        "content3 param3"
+        "btn rei";
+    grid-template-columns: auto auto max-content;
+    font-family: sans-serif;
+}
+.content > p {
+    margin: 0;
+}
+#titleparam {
+    grid-area: title;
+    margin-right: 10px;
+}
+#closeparam {
+    grid-area: close;
+    margin: auto 0 auto auto;
+    width: 30px;
+    height: 30px;
+    padding: 0 0 0 0.75px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+#closeparam:hover {
+    background-color: rgba(117, 117, 117, 0.137);
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 26px;
+}
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 14px; width: 14px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+.un {
+    grid-area: content1;
+}
+.deux {
+    margin-top: 10px;
+    grid-area: content2;
+}
+.trois {
+    margin-top: 10px;
+    grid-area: content3;
+}
+.param1{
+    margin: auto 1px auto auto;
+    grid-area: param1;
+}
+.param2{
+    grid-area: param2;
+    margin: auto 1px auto auto;
+}
+.param3{
+    grid-area: param3;
+    margin: auto 1px auto auto;
+}
+#savepara {
+    width: fit-content;
+    margin: 30px 0 0 5px;
+    grid-area: btn;
+}
+#reipara {
+    width: fit-content;
+    margin: 30px 0 0 5px;
+    grid-area: rei;
+    background-color: rgb(255, 53, 53);
+    color: white;
+    border: solid 1px rgb(77, 77, 77);
+    border-radius: 2px;
+}
+#reipara:disabled {
+    background-color: rgba(255, 53, 53, 0.500);
+    border: solid 1px rgba(77, 77, 77, 0.500);
+    cursor: not-allowed;
+}
+#questionText {
+    margin: 20px 15px 20px 15px;
+    font-size: 29px;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+#lastTime {
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.61);
+    font-size: 10px;
+}
+#resultText {
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 400px) { 
+    .menu {
+        display: grid;
+        grid-template-areas: "param reload";
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        top: -10px;
+        position: relative; /* ou autre selon contexte */
+    }
+
+    #param,
+    #reload {
+        position: static; /* ⬅ essentiel pour qu'ils entrent dans la grille */
+        height: 45px;
+        width: 45px;
+        margin: auto;
+        box-shadow: none;
+    }
+
+    #param {
+        grid-area: param;
+        margin: 10px auto 10px 25px;
+    }
+
+    #reload {
+        grid-area: reload;
+        margin: 10px 25px 10px auto;
+    }
+}
